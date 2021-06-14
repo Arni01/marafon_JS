@@ -17,6 +17,14 @@ downBtn.addEventListener('click', () => {
   chagesSlide('down');
 });
 
+document.addEventListener('keydown', ({ key }) => {
+  if (key === 'ArrowDown') {
+    chagesSlide('down');
+  } else if (key === 'ArrowUp') {
+    chagesSlide('up');
+  }
+});
+
 function chagesSlide(direction) {
   if (direction === 'up') {
     activeSlideIndex++;
