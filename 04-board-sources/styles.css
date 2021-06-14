@@ -3,7 +3,11 @@
 }
 
 body {
-  background-color: #111;
+  /* background-color: rgb(224, 224, 224); */
+  background-image: url('https://images.unsplash.com/photo-1573124249457-17e0295d94cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1776&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,16 +21,21 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 400px;
-  gap: 4px;
+  max-width: 640px;
+  gap: 5px;
+  background-color: rgb(212, 212, 212);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .square {
-  width: 16px;
-  height: 16px;
-  background: #1d1d1d;
-  box-shadow: 0 0 2px #000;
-  transition: 2s ease;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: #a1a1a1;
+  border: 2px solid #181818;
+  box-shadow: 0 0 5px rgb(39, 39, 39);
+  transition: 2.5s ease-in-out;
 }
 
 .square:hover {

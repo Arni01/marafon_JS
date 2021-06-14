@@ -1,6 +1,13 @@
 const board = document.querySelector('#board');
-const SQUARES_NUMBERS = 500;
-const colors = ['#e74c3c', '#8e44ad', '#3498db', '#e67e22', '#2ecc71'];
+const SQUARES_NUMBERS = 600;
+const colors = [
+  '#00b9fc',
+  '#47cf73',
+  '#b957ff',
+  '#ffdc2e',
+  '#ff3c41',
+  '#2cc7ff',
+];
 
 const createSquare = () => {
   return '<div class="square"></div>';
@@ -22,15 +29,17 @@ board.addEventListener('mouseout', ({ target }) => {
   }
 });
 
-function setColor(el) {
+function setColor({ style }) {
   const color = getRandomColor();
-  el.style.backgroundColor = color;
-  el.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`;
+  style.backgroundColor = color;
+  style.boxShadow = `0 0 5px ${color}, 0 0 10px ${color}`;
+  style.borderColor = color;
 }
 
-function removeColor(el) {
-  el.style.backgroundColor = '#1d1d1d';
-  el.style.boxShadow = `0 0 2px #000`;
+function removeColor({ style }) {
+  style.backgroundColor = '#a1a1a1';
+  style.boxShadow = `0 0 5px rgb(39, 39, 39)`;
+  style.borderColor = '#181818';
 }
 
 function getRandomColor() {
