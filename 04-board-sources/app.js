@@ -9,26 +9,6 @@ const colors = [
   '#2cc7ff',
 ];
 
-const createSquare = () => {
-  return '<div class="square"></div>';
-};
-
-for (let i = 0; i < SQUARES_NUMBERS; i++) {
-  board.insertAdjacentHTML('beforeend', createSquare());
-}
-
-board.addEventListener('mouseover', ({ target }) => {
-  if (target.className.includes('square')) {
-    setColor(target);
-  }
-});
-
-board.addEventListener('mouseout', ({ target }) => {
-  if (target.className.includes('square')) {
-    removeColor(target);
-  }
-});
-
 function setColor({ style }) {
   const color = getRandomColor();
   style.backgroundColor = color;
@@ -43,6 +23,27 @@ function removeColor({ style }) {
 }
 
 function getRandomColor() {
-  const index = Math.floor(Math.random() * colors.length);
-  return colors[index];
+  return colors[Math.floor(Math.random() * colors.length)];
 }
+
+const createSquare = () => {
+  const squareDiv = '<div class="square"></div>';
+
+  for (let i = 0; i < SQUARES_NUMBERS; i++) {
+    board.insertAdjacentHTML('beforeend', squareDiv);
+  }
+};
+
+createSquare();
+
+board.addEventListener('mouseover', ({ target }) => {
+  if (target.className.includes('square')) {
+    setColor(target);
+  }
+});
+
+board.addEventListener('mouseout', ({ target }) => {
+  if (target.className.includes('square')) {
+    removeColor(target);
+  }
+});
